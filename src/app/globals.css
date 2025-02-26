@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --primary: theme(colors.light);
+  --primary: theme(colors.primary);
+  --primary-dark: theme(colors.primary_dark);
   --secondary: theme(colors.dark);
   --white: theme(colors.white);
   --black: theme(colors.black);
