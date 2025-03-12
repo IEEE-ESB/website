@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./styles.module.css";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export const NavBar = ({ navs }) => {
