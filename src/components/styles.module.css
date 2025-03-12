@@ -1,0 +1,27 @@
+.nav_button {
+  --nav-color: var(--primary);
+}
+
+.nav_button:hover {
+  --nav-color: var(--primary-dark);
+  color: white;
+  cursor: pointer;
+}
+
+.triangle_topleft {
+  width: 0;
+  height: 0;
+  border-top: 3rem solid var(--nav-color);
+  border-right: 3rem solid transparent;
+}
+
+.rectangle {
+  width: 6rem;
+  height: 3rem;
+  background: var(--nav-color);
+  border-top-color: transparent;
+}
+
+.bg_black {
+  background-color: var(--black);
+}
