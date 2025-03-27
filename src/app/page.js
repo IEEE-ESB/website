@@ -1,7 +1,10 @@
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center gap-y-10">
-      <img src="next.svg" height={500} width={500} />
+      <img
+        src="mountain.webp"
+        className="object-none object-center h-48 w-full"
+      />
       <p className="text-5xl font-bold">About Us</p>
       <div className="flex flex-col gap-3 w-3/4">
         <p>
