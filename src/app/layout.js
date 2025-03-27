@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
               { title: "Events", nav: "/" },
             ]}
           />
-          <div className="ms-40 mt-32 p-3">{children}</div>
+          <div className="ms-40 mt-32 p-3 w-full">{children}</div>
         </div>
       </body>
     </html>
