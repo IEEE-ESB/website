@@ -1,20 +1,21 @@
 function EventList({ data }) {
   return (
-    <ul className="flex flex-col gap-5">
+    <div className="grid grid-flow-rows grid-cols-3 gap-5">
       {data.map((event) => {
         const date = new Date(event.when);
         return (
-          <li
+          <div
             key={event.title}
             className="border border-8 border-yellow-500 p-5"
           >
+            <img src="next.svg" className="w-auto mb-5" />
             <p className="text-xl font-bold">{event.title}</p>
             <p className="italic">{date.toDateString()}</p>
             <p className="text-left mt-3">{event.description}</p>
-          </li>
+          </div>
         );
       })}
-    </ul>
+    </div>
   );
 }
 
