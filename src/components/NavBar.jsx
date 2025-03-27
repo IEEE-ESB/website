@@ -5,7 +5,9 @@ import Link from "next/link";
 
 export const NavBar = ({ navs }) => {
   return (
-    <div className={`flex flex-col ${styles.bg_black} pe-3 gap-5 py-5`}>
+    <div
+      className={`fixed flex flex-col h-full mt-32 ${styles.bg_black} pe-3 gap-5 py-5`}
+    >
       {navs.map((item, i) => {
         return <BookMark title={item.title} nav={item.nav} key={i} />;
       })}
