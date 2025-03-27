@@ -12,8 +12,8 @@ export default function RootLayout({ children }) {
       <body className={`flex`}>
         <NavBar
           navs={[
-            { title: "About Us", nav: "/about-us" },
-            { title: "Events", nav: "/events" },
+            { title: "About Us", nav: "/" },
+            { title: "Events", nav: "/" },
           ]}
         />
         {children}
