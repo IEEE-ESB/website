@@ -17,11 +17,11 @@ export default function RootLayout({ children }) {
         <div className="flex">
           <NavBar
             navs={[
-              { title: "About Us", nav: "/about-us" },
-              { title: "Events", nav: "/events" },
+              { title: "About Us", nav: "/" },
+              { title: "Events", nav: "/" },
             ]}
           />
-          <div className="ms-40 mt-32 p-3">{children}</div>
+          <div className="ms-40 mt-32 p-3 w-full">{children}</div>
         </div>
       </body>
     </html>
