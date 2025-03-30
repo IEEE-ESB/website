@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
           <NavBar
             navs={[
               { title: "About Us", nav: "/" },
-              { title: "Events", nav: "/" },
+              { title: "Events", nav: "/events" },
             ]}
           />
           <div className="ms-40 mt-32 p-3 w-full">{children}</div>
