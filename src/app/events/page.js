@@ -29,7 +29,11 @@ export default function Events() {
 
   useEffect(() => {
     try {
-      fetch("http://localhost:3000/api/events").then((response) => {
+      fetch("http://localhost:3000/api/events", {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }).then((response) => {
         response.json().then((data) => {
           setData(data);
         });
