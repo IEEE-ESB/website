@@ -1,3 +1,8 @@
+"use client";
+
+import { list } from "postcss";
+import { useEffect, useState } from "react";
+
 function EventList({ data }) {
   return (
     <div className="grid grid-flow-rows grid-cols-3 gap-5">
@@ -19,20 +24,32 @@ function EventList({ data }) {
   );
 }
 
-export default async function Events() {
-  const data = await (await fetch("http://localhost:3000/api/events")).json();
+export default function Events() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    try {
+      fetch("http://localhost:3000/api/events").then((response) => {
+        response.json().then((data) => {
+          setData(data);
+        });
+      });
+    } catch {
+      console.log("Cannot retrieve events");
+    }
+  }, []);
 
   return (
     <div className="text-center flex flex-col gap-20">
       <p className="text-6xl font-bold">Events</p>
       <div>
         <p className="text-4xl underline">Upcoming</p>
-        <EventList data={data} />
+        {data ? <EventList data={data} /> : <p>loading...</p>}
       </div>
       <div>
         <p className="text-4xl underline">Previous</p>
         <ul className="flex flex-col gap-5">
-          <EventList data={data} />
+          {data ? <EventList data={data} /> : <p>loading...</p>}
         </ul>
       </div>
     </div>
