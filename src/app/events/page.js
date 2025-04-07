@@ -1,7 +1,7 @@
 import styles from "@/app/styles.module.css";
 
 function EventList({ data }) {
-  return (
+  return data ? (
     <div className="grid grid-flow-rows grid-cols-3 gap-5">
       {data.map((event) => {
         const date = new Date(event.when);
@@ -22,11 +22,21 @@ function EventList({ data }) {
         );
       })}
     </div>
+  ) : (
+    <div>loading...</div>
   );
 }
 
-export default async function Events() {
-  const data = await (await fetch("http://localhost:3000/api/events")).json();
+export default function Events() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/events").then((response) => {
+      response.json().then((events) => {
+        setData(events);
+      });
+    });
+  }, []);
 
   return (
     <div className="text-center flex flex-col gap-20">
