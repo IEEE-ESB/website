@@ -10,12 +10,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="relative">
-        <div className="fixed w-full h-32 flex justify-between px-5 bg-[url(/AI-PCB-1.png)] bg-cover bg-center">
-          <div className="flex h-ful bg-black/70 items-center text-white text-6xl font-extrabold">
+        <div className="fixed w-full h-32 flex justify-between bg-[url(/AI-PCB-1.png)] bg-cover bg-center">
+          <div className="flex px-5 h-ful items-center text-white text-6xl font-extrabold text_gradient_r">
             <img src="/IEEEicon.png" className="h-28" />
             <div>IEEE</div>
           </div>
-          <div className="h-full flex items-center bg-black/70 text-white text-6xl font-bold">
+          <div
+            className={`h-full flex items-center text-white text-6xl font-bold text_gradient_l`}
+          >
             <div>Edinburg Student Branch</div>
           </div>
         </div>
