@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import styles from "@/app/styles.module.css";
 
 function EventList({ data }) {
   return data ? (
@@ -10,11 +8,15 @@ function EventList({ data }) {
         return (
           <div
             key={event.title}
-            className="border border-8 border-yellow-500 p-5"
+            className="border border-8 border-primary_dark p-5"
           >
-            <img src="next.svg" className="w-auto mb-5" />
-            <p className="text-xl font-bold">{event.title}</p>
-            <p className="italic">{date.toDateString()}</p>
+            <img
+              src={event.image ? event.image : "next.svg"}
+              className={`w-full h-24 mb-5 ${styles.event_image}`}
+            />
+            <p className="text-xl font-bold text-primary_dark">{event.title}</p>
+            <p className="italic text-primary_dark">{date.toDateString()}</p>
+            <p className="text-primary">{event.who}</p>
             <p className="text-left mt-3">{event.description}</p>
           </div>
         );
@@ -38,13 +40,13 @@ export default function Events() {
 
   return (
     <div className="text-center flex flex-col gap-20">
-      <p className="text-6xl font-bold">Events</p>
+      <p className="text-6xl font-bold text-primary_dark">Events</p>
       <div>
-        <p className="text-4xl underline">Upcoming</p>
+        <p className="text-4xl underline text-primary">Upcoming</p>
         <EventList data={data} />
       </div>
       <div>
-        <p className="text-4xl underline">Previous</p>
+        <p className="text-4xl underline text-primary">Previous</p>
         <ul className="flex flex-col gap-5">
           <EventList data={data} />
         </ul>

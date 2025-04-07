@@ -10,9 +10,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="relative">
-        <div className="fixed w-full bg-zinc-500 h-32 flex justify-between px-5 text-yellow-300 text-6xl font-bold items-center">
-          <div>IEEE</div>
-          <div>Edinburg Student Branch</div>
+        <div className="fixed w-full h-32 flex justify-between bg-[url(/AI-PCB-1.png)] bg-cover bg-center">
+          <div className="flex px-5 h-ful items-center text-white text-6xl font-extrabold text_gradient_r">
+            <img src="/IEEEicon.png" className="h-28" />
+            <div className="text-8xl">IEEE</div>
+          </div>
+          <div
+            className={`h-full flex items-center text-white text-6xl font-bold text_gradient_l`}
+          >
+            <div>Edinburg Student Branch</div>
+          </div>
         </div>
         <div className="flex">
           <NavBar
