@@ -49,7 +49,7 @@ export default function Events() {
     <div className="text-center flex flex-col gap-20">
       <p className="text-6xl font-bold text-primary_dark">Events</p>
       <div>
-        <p className="text-4xl underline">Upcoming</p>
+        <p className="text-4xl underline text-primary">Upcoming</p>
         {data ? <EventList data={data} /> : <p>loading...</p>}
       </div>
       <div>
