@@ -20,7 +20,7 @@ function EventList({ data }) {
 }
 
 export default async function Events() {
-  const data = await (await fetch("http://localhost:3000/api/events")).json();
+  const data = await (await fetch("/api/events")).json();
 
   return (
     <div className="text-center flex flex-col gap-20">
