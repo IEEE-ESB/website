@@ -1,4 +1,7 @@
+"use client";
+
 import styles from "@/app/styles.module.css";
+import { useState, useEffect } from "react";
 
 function EventList({ data }) {
   return data ? (
