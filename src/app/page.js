@@ -1,11 +1,13 @@
+import styles from "@/app/styles.module.css";
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center gap-y-10">
       <img
         src="mountain.webp"
-        className="object-none object-center h-48 w-full"
+        className={`object-none object-center h-48 w-full ${styles.event_image}`}
       />
-      <p className="text-5xl font-bold">About Us</p>
+      <p className="text-5xl font-bold text-primary_dark">About Us</p>
       <div className="flex flex-col gap-3 w-3/4">
         <p>
           Voluptate officia ullamco proident est irure eu anim ipsum duis
