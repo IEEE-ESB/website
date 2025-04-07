@@ -1,10 +1,9 @@
 "use client";
 
-import { list } from "postcss";
 import { useEffect, useState } from "react";
 
 function EventList({ data }) {
-  return (
+  return data ? (
     <div className="grid grid-flow-rows grid-cols-3 gap-5">
       {data.map((event) => {
         const date = new Date(event.when);
@@ -21,6 +20,8 @@ function EventList({ data }) {
         );
       })}
     </div>
+  ) : (
+    <div>loading...</div>
   );
 }
 
