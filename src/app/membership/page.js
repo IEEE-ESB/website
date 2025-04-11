@@ -32,7 +32,7 @@ export default function Membership() {
           </ul>
         </div>
         <a href="membership/join">
-          <button className="text-3xl bg-yellow-300 p-3 rounded">
+          <button className="text-3xl bg-primary hover:bg-primary_dark hover:text-white p-3 rounded">
             Join Us
           </button>
         </a>
@@ -51,7 +51,7 @@ export default function Membership() {
             occaecat aute.
           </p>
         </div>
-        <button className="text-3xl bg-yellow-300 p-3 rounded">
+        <button className="text-3xl bg-primary hover:bg-primary_dark hover:text-white p-3 rounded">
           Support Us
         </button>
       </div>
