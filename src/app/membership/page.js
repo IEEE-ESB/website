@@ -2,13 +2,13 @@ import { redirect } from "next/navigation";
 
 export default function Membership() {
   return (
-    <div className="flex flex-col items-center justify-center gap-y-20">
+    <div className="flex flex-col items-center justify-center gap-y-10">
       <img
         src="mountain.webp"
         className="object-none object-center h-48 w-full"
       />
       <div className="flex flex-col items-center gap-y-5">
-        <p className="text-5xl font-bold">About Us</p>
+        <p className="text-5xl font-bold">Become a Member</p>
         <div className="flex flex-col gap-3 w-3/4">
           <p>
             Voluptate officia ullamco proident est irure eu anim ipsum duis
