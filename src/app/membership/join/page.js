@@ -12,12 +12,17 @@ export default function MembershipJoin() {
     console.log(e.target.cashapp.value);
     fetch("/api/member", {
       method: "POST",
-      body: {
+      body: JSON.stringify({
         name: e.target.name.value,
         major: e.target.major.value,
         cashapp: e.target.cashapp.value,
-      },
+      }),
       "content-type": "application/json",
+    }).then((response) => {
+      console.log(response);
+      response.json().then((data) => {
+        console.log(data);
+      });
     });
   };
 
