@@ -27,23 +27,39 @@ export default function MembershipJoin() {
   };
 
   return (
-    <form className="flex flex-col w-1/4" onSubmit={submit}>
-      <input
-        name="name"
-        placeholder="Name"
-        className="border border-4 border-zinc-500 text-center"
-      />
-      <input
-        name="major"
-        placeholder="Major"
-        className="border border-4 border-zinc-500 text-center"
-      />
-      <input
-        name="cashapp"
-        placeholder="Cashapp Tag"
-        className="border border-4 border-zinc-500 text-center"
-      />
-      <button type="submit">Submit</button>
-    </form>
+    <div className="w-full h-full justify-items-center">
+      <div className="text-4xl font-bold p-4 text-primary_dark">
+        Membership Form
+      </div>
+      <form
+        className="flex flex-col w-1/4 gap-y-3 items-center"
+        onSubmit={submit}
+      >
+        <input
+          name="name"
+          placeholder="Name"
+          required
+          className="border border-4 border-zinc-500 text-center w-full h-10"
+        />
+        <input
+          name="major"
+          placeholder="Major"
+          required
+          className="border border-4 border-zinc-500 text-center w-full h-10"
+        />
+        <input
+          name="cashapp"
+          placeholder="Cashapp Tag"
+          required
+          className="border border-4 border-zinc-500 text-center w-full h-10"
+        />
+        <button
+          type="submit"
+          className="bg-primary hover:bg-primary_dark hover:text-white h-10 w-1/2 rounded"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }
