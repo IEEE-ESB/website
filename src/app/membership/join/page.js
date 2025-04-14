@@ -1,29 +1,36 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { useState } from "react";
 
 export default function MembershipJoin() {
-  const params = useParams();
+  const [error, setError] = useState("");
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(e.target.name.value);
-    console.log(e.target.major.value);
-    console.log(e.target.cashapp.value);
-    fetch("/api/member", {
-      method: "POST",
-      body: JSON.stringify({
-        name: e.target.name.value,
-        major: e.target.major.value,
-        cashapp: e.target.cashapp.value,
-      }),
-      "content-type": "application/json",
-    }).then((response) => {
-      console.log(response);
-      response.json().then((data) => {
-        console.log(data);
-      });
-    });
+    try {
+      const form = document.getElementById("memberForm");
+      fetch("/api/member", {
+        method: "POST",
+        body: JSON.stringify({
+          name: e.target.name.value,
+          major: e.target.major.value,
+          cashapp: e.target.cashapp.value,
+        }),
+        "content-type": "application/json",
+      })
+        .then(() => {
+          console.log(form, form.parentNode);
+          const test = document.createElement("div");
+          test.innerText = "Thank you, welcome to the club!";
+          form.parentNode.appendChild(test);
+          // form.remove();
+        })
+        .then(() => {
+          form.remove();
+        });
+    } catch {
+      setError("Network error. Please try again.");
+    }
   };
 
   return (
@@ -31,7 +38,9 @@ export default function MembershipJoin() {
       <div className="text-4xl font-bold p-4 text-primary_dark">
         Membership Form
       </div>
+      <img src="/file.svg" width={150} className="pb-5" />
       <form
+        id="memberForm"
         className="flex flex-col w-1/4 gap-y-3 items-center"
         onSubmit={submit}
       >
@@ -52,6 +61,9 @@ export default function MembershipJoin() {
           placeholder="Cashapp Tag"
           required
           className="border border-4 border-zinc-500 text-center w-full h-10"
+          onClick={(e) => {
+            if (!e.target.value) e.target.value = "$";
+          }}
         />
         <button
           type="submit"
