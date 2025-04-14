@@ -46,17 +46,15 @@ export default function Events() {
   }, []);
 
   return (
-    <div className="text-center flex flex-col gap-20">
+    <div className="text-center flex flex-col gap-10">
       <p className="text-6xl font-bold text-primary_dark">Events</p>
       <div>
-        <p className="text-4xl underline text-primary">Upcoming</p>
+        <p className="text-4xl underline text-black">Upcoming</p>
         {data ? <EventList data={data} /> : <p>loading...</p>}
       </div>
       <div>
-        <p className="text-4xl underline text-primary">Previous</p>
-        <ul className="flex flex-col gap-5">
-          {data ? <EventList data={data} /> : <p>loading...</p>}
-        </ul>
+        <p className="text-4xl underline text-black">Previous</p>
+        {data ? <EventList data={data} /> : <p>loading...</p>}
       </div>
     </div>
   );
