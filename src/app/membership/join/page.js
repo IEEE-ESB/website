@@ -38,7 +38,7 @@ export default function MembershipJoin() {
       <div className="text-4xl font-bold p-4 text-primary_dark">
         Membership Form
       </div>
-      <img src="/file.svg" width={150} className="pb-5" />
+      <img src="/qr-code.jpg" width={150} className="pb-5" />
       <form
         id="memberForm"
         className="flex flex-col w-1/4 gap-y-3 items-center"
@@ -67,7 +67,7 @@ export default function MembershipJoin() {
         />
         <button
           type="submit"
-          className="bg-primary hover:bg-primary_dark hover:text-white h-10 w-1/2 rounded"
+          className="bg-primary hover:bg-primary_dark hover:text-white h-10 w-1/2 rounded font-bold"
         >
           Submit
         </button>
