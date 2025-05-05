@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
               { title: "About Us", nav: "/" },
               { title: "Events", nav: "/events" },
               { title: "Membership", nav: "/membership" },
+              { title: "Leadership", nav: "/leadership" },
             ]}
           />
           <div className="ms-40 mt-32 p-3 w-full">{children}</div>
