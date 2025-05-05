@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./styles.module.css";
 import Link from "next/link";
 
@@ -20,7 +18,7 @@ const BookMark = ({ title, nav }) => {
     <Link href={nav}>
       <button className={`flex relative ${styles.nav_button}`}>
         <div className="absolute inset-3">
-          <p className="text-left">{title}</p>
+          <p className="text-left font-bold">{title}</p>
         </div>
         <div className={styles.rectangle} />
         <div className={styles.triangle_topleft} />
