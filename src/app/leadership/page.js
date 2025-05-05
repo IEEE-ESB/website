@@ -37,7 +37,7 @@ const officers = [
   },
   {
     id: 7,
-    name: "Joey ",
+    name: "Joey Rodriguez",
     position: "Social Media Manager",
     image: "missing.webp",
   },
