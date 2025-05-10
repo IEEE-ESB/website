@@ -47,7 +47,19 @@ const faculty = [
   {
     id: 1,
     name: "Carlos Rodriguez",
-    position: "EE Professor",
+    position: "Advisor",
+    image: "missing.webp",
+  },
+  {
+    id: 2,
+    name: "Luis Castanuela",
+    position: "Advisor",
+    image: "missing.webp",
+  },
+  {
+    id: 3,
+    name: "Dr. Nazmul Islam",
+    position: "Advisor",
     image: "missing.webp",
   },
 ];
