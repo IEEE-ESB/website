@@ -17,7 +17,7 @@ function EventList({ data }) {
               src={
                 event.image
                   ? `http://localhost:8090/api/files/events/${event.id}/${event.image}`
-                  : "missing.webp"
+                  : "under_construction.png"
               }
               className={`w-full h-48 mb-5 ${styles.event_image}`}
             />
