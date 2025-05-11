@@ -19,7 +19,6 @@ export default function MembershipJoin() {
         "content-type": "application/json",
       })
         .then(() => {
-          console.log(form, form.parentNode);
           const test = document.createElement("div");
           test.innerText = "Thank you, welcome to the club!";
           form.parentNode.appendChild(test);
