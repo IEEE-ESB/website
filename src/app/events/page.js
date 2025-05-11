@@ -16,7 +16,7 @@ function EventList({ data }) {
             <img
               src={
                 event.image
-                  ? `http://localhost:8090/api/files/events/${event.id}/${event.image}`
+                  ? `http://dev.koriel.net/api/files/events/${event.id}/${event.image}`
                   : "under_construction.png"
               }
               className={`w-full h-48 mb-5 ${styles.event_image}`}
@@ -35,26 +35,28 @@ function EventList({ data }) {
 }
 
 export default function Events() {
-  // const [data, setData] = useState(null);
   const [upcoming, setUpcoming] = useState([]);
   const [previous, setPrevious] = useState([]);
 
+  const url = "http://dev.koriel.net/api/collections/events/records";
+
   useEffect(() => {
     try {
-      fetch("http://localhost:8090/api/collections/events/records").then(
-        (response) => {
-          response.json().then((data) => {
-            console.log(data);
-            // setData(data);
-            setUpcoming(
-              data.items.filter((item) => new Date(item.when) >= Date.now())
-            );
-            setPrevious(
-              data.items.filter((item) => new Date(item.when) < Date.now())
-            );
-          });
-        }
-      );
+      fetch(`/api/proxy?target=${encodeURI(url)}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((response) => {
+        response.json().then((data) => {
+          setUpcoming(
+            data.items.filter((item) => new Date(item.when) >= Date.now())
+          );
+          setPrevious(
+            data.items.filter((item) => new Date(item.when) < Date.now())
+          );
+        });
+      });
     } catch {
       console.log("Cannot retrieve events");
     }
