@@ -51,9 +51,39 @@ export default function Home() {
           </li>
         </ul>
         <h1 className="text-3xl font-bold">Our Mission</h1>
-        <p>TBD</p>
+        <p>
+          Our mission is to empower students through hands-on learning,
+          leadership opportunities, and community outreach in engineering and
+          technology—cultivating the next generation of innovators and
+          changemakers.
+        </p>
         <h1 className="text-3xl font-bold">Our Values</h1>
-        <p>TBD</p>
+        <ul className="list-disc flex flex-col gap-3">
+          <li>
+            <h1 className="font-bold">Innovation</h1>
+            We encourage creativity and experimentation in all student-led
+            projects.
+          </li>
+          <li>
+            <h1 className="font-bold">Collaboration</h1>
+            We believe in teamwork across disciplines and backgrounds.
+          </li>
+          <li>
+            <h1 className="font-bold">Community Engagement</h1>
+            We are committed to serving and inspiring our local community,
+            especially the next generation.
+          </li>
+          <li>
+            <h1 className="font-bold">Growth</h1>
+            We provide resources and experiences that help members grow
+            technically, professionally, and personally.
+          </li>
+          <li>
+            <h1 className="font-bold">Leadership</h1>
+            We nurture student leaders who drive positive change in their field
+            and their community.
+          </li>
+        </ul>
         <h1 className="text-3xl font-bold">Why Join IEEE ESB?</h1>
         <p>
           Whether you're looking to enhance your technical skills, lead a team,
