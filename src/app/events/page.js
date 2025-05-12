@@ -43,7 +43,9 @@ export default function Events() {
     try {
       const pb = new PocketBase("https://dev.koriel.net");
       (async () => {
+        // get all events
         let events = await pb.collection("events").getList();
+        // get names from users table
         let leaders = new Set();
         events.items.map((event) =>
           event.who.map((person) => leaders.add(`id='${person}'`))
@@ -52,12 +54,20 @@ export default function Events() {
         const users = await pb.collection("users").getFullList({
           filter: leaders.join(" || "),
         });
+        // map events to correct users
         const names = new Map(users.map((person) => [person.id, person.name]));
         events = events.items.map((event) => {
           return { ...event, who: event.who.map((name) => names.get(name)) };
         });
-        setUpcoming(events.filter((item) => new Date(item.when) >= Date.now()));
-        setPrevious(events.filter((item) => new Date(item.when) < Date.now()));
+        // separate events and sort them
+        const past = events.filter((item) => new Date(item.when) < Date.now());
+        past.sort((a, b) => new Date(b.when) - new Date(a.when));
+        const future = events.filter(
+          (item) => new Date(item.when) >= Date.now()
+        );
+        future.sort((a, b) => new Date(b.when) - new Date(a.when));
+        setPrevious(past);
+        setUpcoming(future);
       })();
     } catch {
       console.log("Cannot retrieve events");
