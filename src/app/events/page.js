@@ -24,7 +24,7 @@ function EventList({ data }) {
             />
             <p className="text-xl font-bold text-primary_dark">{event.title}</p>
             <p className="italic text-primary_dark">{date.toDateString()}</p>
-            <p className="text-primary">{event.who.join(", ")}</p>
+            <p className="text-primary">Mentors: {event.who.join(", ")}</p>
             <p className="text-left mt-3">{event.description}</p>
           </div>
         );
