@@ -2,6 +2,7 @@
 
 import styles from "@/app/styles.module.css";
 import { useState, useEffect } from "react";
+import PocketBase from "pocketbase";
 
 function EventList({ data }) {
   return data ? (
@@ -23,7 +24,7 @@ function EventList({ data }) {
             />
             <p className="text-xl font-bold text-primary_dark">{event.title}</p>
             <p className="italic text-primary_dark">{date.toDateString()}</p>
-            <p className="text-primary">{event.who}</p>
+            <p className="text-primary">{event.who.join(", ")}</p>
             <p className="text-left mt-3">{event.description}</p>
           </div>
         );
@@ -35,28 +36,29 @@ function EventList({ data }) {
 }
 
 export default function Events() {
-  const [upcoming, setUpcoming] = useState([]);
-  const [previous, setPrevious] = useState([]);
-
-  const url = "http://dev.koriel.net/api/collections/events/records";
+  const [upcoming, setUpcoming] = useState();
+  const [previous, setPrevious] = useState();
 
   useEffect(() => {
     try {
-      fetch(`/api/proxy?target=${encodeURI(url)}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((response) => {
-        response.json().then((data) => {
-          setUpcoming(
-            data.items.filter((item) => new Date(item.when) >= Date.now())
-          );
-          setPrevious(
-            data.items.filter((item) => new Date(item.when) < Date.now())
-          );
+      const pb = new PocketBase("https://dev.koriel.net");
+      (async () => {
+        let events = await pb.collection("events").getList();
+        let leaders = new Set();
+        events.items.map((event) =>
+          event.who.map((person) => leaders.add(`id='${person}'`))
+        );
+        leaders = Array.from(leaders);
+        const users = await pb.collection("users").getFullList({
+          filter: leaders.join(" || "),
         });
-      });
+        const names = new Map(users.map((person) => [person.id, person.name]));
+        events = events.items.map((event) => {
+          return { ...event, who: event.who.map((name) => names.get(name)) };
+        });
+        setUpcoming(events.filter((item) => new Date(item.when) >= Date.now()));
+        setPrevious(events.filter((item) => new Date(item.when) < Date.now()));
+      })();
     } catch {
       console.log("Cannot retrieve events");
     }
@@ -66,11 +68,13 @@ export default function Events() {
     <div className="text-center flex flex-col gap-10">
       <p className="text-6xl font-bold text-primary_dark">Events</p>
       <div>
-        <p className="text-4xl underline text-black">Upcoming</p>
+        <p className="text-4xl text-black font-bold">Upcoming</p>
+        <div className="border border-black border-2 mb-5" />
         {upcoming ? <EventList data={upcoming} /> : <p>loading...</p>}
       </div>
       <div>
-        <p className="text-4xl underline text-black">Previous</p>
+        <p className="text-4xl text-black font-bold">Previous</p>
+        <div className="border border-black border-2 mb-5" />
         {previous ? <EventList data={previous} /> : <p>loading...</p>}
       </div>
     </div>
