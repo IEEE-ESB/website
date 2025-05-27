@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import PocketBase from "pocketbase";
 
 function EventList({ data }) {
-  return data ? (
+  return (
     <div className="grid grid-flow-rows grid-cols-3 gap-5">
       {data.map((event) => {
         const date = new Date(event.when);
@@ -30,8 +30,6 @@ function EventList({ data }) {
         );
       })}
     </div>
-  ) : (
-    <div>loading...</div>
   );
 }
 
@@ -69,9 +67,7 @@ export default function Events() {
         setPrevious(past);
         setUpcoming(future);
       })();
-    } catch {
-      console.log("Cannot retrieve events");
-    }
+    } catch {}
   }, []);
 
   return (
