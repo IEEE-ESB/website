@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function MembershipJoin() {
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState([]);
 
   const submit = (e) => {
     e.preventDefault();
@@ -32,12 +32,27 @@ export default function MembershipJoin() {
     }
   };
 
+  const emailCheck = (e) => {
+    if (e.target.value.includes("@utrgv.edu")) {
+      setErrors(
+        errors.filter((error) => error != "Please enter a UTRGV email")
+      );
+      return;
+    } else if (errors.includes("Please enter a UTRGV email")) return;
+    setErrors([...errors, "Please enter a UTRGV email"]);
+  };
+
   return (
     <div className="w-full h-full justify-items-center">
       <div className="text-4xl font-bold p-4 text-primary_dark">
         Membership Form
       </div>
       <img src="/qr-code.jpg" width={150} className="pb-5" />
+      {errors.map((error) => (
+        <div key={error} className="text-red-500 text-xl font-bold">
+          {error}
+        </div>
+      ))}
       <form
         id="memberForm"
         className="flex flex-col w-1/4 gap-y-3 items-center"
@@ -54,6 +69,13 @@ export default function MembershipJoin() {
           placeholder="Major"
           required
           className="border border-4 border-zinc-500 text-center w-full h-10"
+        />
+        <input
+          name="major"
+          placeholder="UTRGV Email"
+          required
+          className="border border-4 border-zinc-500 text-center w-full h-10"
+          onBlur={emailCheck}
         />
         <input
           name="cashapp"
