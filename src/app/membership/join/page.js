@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PocketBase from "pocketbase";
 
 export default function MembershipJoin() {
   const [errors, setErrors] = useState([]);
@@ -8,6 +9,7 @@ export default function MembershipJoin() {
   const submit = (e) => {
     e.preventDefault();
     try {
+      const pb = new PocketBase("https://dev.koriel.net");
       const form = document.getElementById("memberForm");
       fetch("/api/member", {
         method: "POST",
@@ -28,7 +30,7 @@ export default function MembershipJoin() {
           form.remove();
         });
     } catch {
-      setError("Network error. Please try again.");
+      setErrors(["Network error. Please try again."]);
     }
   };
 
