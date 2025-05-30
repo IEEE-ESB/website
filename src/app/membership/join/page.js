@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import PocketBase from "pocketbase";
 
 export default function MembershipJoin() {
   const [errors, setErrors] = useState([]);
@@ -9,26 +8,34 @@ export default function MembershipJoin() {
   const submit = (e) => {
     e.preventDefault();
     try {
-      const pb = new PocketBase("https://dev.koriel.net");
       const form = document.getElementById("memberForm");
       fetch("/api/member", {
         method: "POST",
         body: JSON.stringify({
           name: e.target.name.value,
           major: e.target.major.value,
-          cashapp: e.target.cashapp.value,
+          email: e.target.email.value,
+          payment: e.target.payment.value,
         }),
         "content-type": "application/json",
-      })
-        .then(() => {
-          const test = document.createElement("div");
-          test.innerText = "Thank you, welcome to the club!";
-          form.parentNode.appendChild(test);
-          // form.remove();
-        })
-        .then(() => {
-          form.remove();
-        });
+      }).then((response) => {
+        if (!response.ok) {
+          setErrors([
+            ...errors,
+            "Couldn't complete request. Please try again.",
+          ]);
+          return;
+        }
+        setErrors(
+          errors.filter(
+            (error) => error != "Couldn't complete request. Please try again."
+          )
+        );
+        const test = document.createElement("div");
+        test.innerText = "Thank you, welcome to the club!";
+        form.parentNode.appendChild(test);
+        form.remove();
+      });
     } catch {
       setErrors(["Network error. Please try again."]);
     }
@@ -121,7 +128,7 @@ export default function MembershipJoin() {
           onBlur={emptyCheck}
         />
         <input
-          name="major"
+          name="email"
           placeholder="UTRGV Email"
           required
           className="border border-4 border-zinc-500 text-center w-full h-10"
@@ -129,7 +136,7 @@ export default function MembershipJoin() {
           onClick={emailClick}
         />
         <input
-          name="cashapp"
+          name="payment"
           placeholder="Cashapp Tag"
           required
           className="border border-4 border-zinc-500 text-center w-full h-10"
