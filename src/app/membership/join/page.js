@@ -35,13 +35,59 @@ export default function MembershipJoin() {
   };
 
   const emailCheck = (e) => {
-    if (e.target.value.includes("@utrgv.edu")) {
+    if (
+      e.target.value.includes("@utrgv.edu") &&
+      e.target.value.replace(/@utrgv.edu/g, "") !== ""
+    ) {
       setErrors(
         errors.filter((error) => error != "Please enter a UTRGV email")
       );
       return;
     } else if (errors.includes("Please enter a UTRGV email")) return;
     setErrors([...errors, "Please enter a UTRGV email"]);
+  };
+
+  const emailClick = (e) => {
+    if (e.target.value.includes("@utrgv.edu")) {
+      return;
+    }
+    e.target.value += "@utrgv.edu";
+  };
+
+  const cashappCheck = (e) => {
+    const input = e.target.value;
+    if (input.replace("$", "")) {
+      setErrors(
+        errors.filter(
+          (error) =>
+            error !=
+            'Enter your cashapp tag or type "paid" if you used another method'
+        )
+      );
+      return;
+    } else if (
+      errors.includes(
+        'Enter your cashapp tag or type "paid" if you used another method'
+      )
+    ) {
+      return;
+    }
+    setErrors([
+      ...errors,
+      'Enter your cashapp tag or type "paid" if you used another method',
+    ]);
+  };
+
+  const emptyCheck = (e) => {
+    if (e.target.value) {
+      setErrors(
+        errors.filter((error) => error != `Missing ${e.target.placeholder}`)
+      );
+      return;
+    } else if (errors.includes(`Missing ${e.target.placeholder}`)) {
+      return;
+    }
+    setErrors([...errors, `Missing ${e.target.placeholder}`]);
   };
 
   return (
@@ -65,12 +111,14 @@ export default function MembershipJoin() {
           placeholder="Name"
           required
           className="border border-4 border-zinc-500 text-center w-full h-10"
+          onBlur={emptyCheck}
         />
         <input
           name="major"
           placeholder="Major"
           required
           className="border border-4 border-zinc-500 text-center w-full h-10"
+          onBlur={emptyCheck}
         />
         <input
           name="major"
@@ -78,6 +126,7 @@ export default function MembershipJoin() {
           required
           className="border border-4 border-zinc-500 text-center w-full h-10"
           onBlur={emailCheck}
+          onClick={emailClick}
         />
         <input
           name="cashapp"
@@ -87,6 +136,7 @@ export default function MembershipJoin() {
           onClick={(e) => {
             if (!e.target.value) e.target.value = "$";
           }}
+          onBlur={cashappCheck}
         />
         <button
           type="submit"
