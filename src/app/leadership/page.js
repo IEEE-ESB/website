@@ -93,9 +93,11 @@ export default function Leadership() {
       </div>
       <div className="justify-items-center">
         <p className="text-2xl font-bold">Want to be an officer?</p>
-        <button className="bg-primary hover:bg-primary_dark hover:text-white border rounded p-2 font-bold">
-          Apply Now
-        </button>
+        <a href="/leadership/join">
+          <button className="bg-primary hover:bg-primary_dark hover:text-white border rounded p-2 font-bold">
+            Apply Now
+          </button>
+        </a>
       </div>
     </div>
   );
