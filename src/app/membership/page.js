@@ -66,9 +66,9 @@ export default function Membership() {
             experience matters and your involvement makes a difference.
           </p>
         </div>
-        <button className="text-3xl bg-primary hover:bg-primary_dark hover:text-white p-3 rounded">
+        {/* <button className="text-3xl bg-primary hover:bg-primary_dark hover:text-white p-3 rounded">
           Support Us
-        </button>
+        </button> */}
       </div>
     </div>
   );
