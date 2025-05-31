@@ -8,7 +8,7 @@ export default function Home() {
         className={`object-none object-center h-48 w-full ${styles.event_image}`}
       />
       <p className="text-5xl font-bold text-primary_dark">About Us</p>
-      <div className="flex flex-col gap-5 w-3/4 items-center pb-20">
+      <div className="flex flex-col gap-5 w-3/4 items-center">
         <p>
           IEEE Edinburg Student Branch (IEEE ESB) is a dynamic, student-run
           organization dedicated to fostering innovation, leadership, and

@@ -17,10 +17,8 @@ export default function RootLayout({ children }) {
               <div className="text-8xl">IEEE</div>
             </div>
           </a>
-          <div
-            className={`h-full flex items-center text-white text-6xl font-bold text_gradient_l`}
-          >
-            <div>Edinburg Student Branch</div>
+          <div className="h-full flex items-center text-white text-6xl font-bold text_gradient_l pe-3">
+            Edinburg Student Branch
           </div>
         </div>
         <div className="flex">
@@ -35,7 +33,7 @@ export default function RootLayout({ children }) {
               // { title: "Get Involved", nav: "/projects" },
             ]}
           />
-          <div className="ms-40 mt-32 p-3 w-full">{children}</div>
+          <div className="ms-40 mt-32 p-3 w-full pb-20">{children}</div>
         </div>
       </body>
     </html>
