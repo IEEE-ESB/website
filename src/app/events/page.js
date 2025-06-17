@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import styles from "@/app/styles.module.css";
 import PocketBase from "pocketbase";
 
