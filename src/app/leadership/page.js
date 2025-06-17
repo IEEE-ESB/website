@@ -18,6 +18,12 @@ const officers = [
     image: "JosephTrevino.jpg",
   },
   {
+    id: 8,
+    name: "Alexa Pera-Lara",
+    position: "Treasurer",
+    image: "missing.webp",
+  },
+  {
     id: 4,
     name: "Jose Amaro",
     position: "Master at Arms",
@@ -65,7 +71,7 @@ const faculty = [
 ];
 
 export default function Leadership() {
-  const size = 48;
+  const size = 240;
   return (
     <div className="flex flex-col items-center gap-10">
       <div className="justify-items-center">
@@ -75,7 +81,9 @@ export default function Leadership() {
             <div key={officer.id}>
               <img
                 src={officer.image}
-                className={`rounded object-fill w-${size} h-${size}`}
+                className="rounded object-fill"
+                width={size}
+                height={size}
               />
               <p className="font-bold">{officer.position}</p>
               <p>{officer.name}</p>
@@ -90,7 +98,9 @@ export default function Leadership() {
             <div key={fac.id}>
               <img
                 src={fac.image}
-                className={`object-contain w-${size} h-${size}`}
+                className="rounded object-fill"
+                width={size}
+                height={size}
               />
               <p className="font-bold">{fac.position}</p>
               <p>{fac.name}</p>
