@@ -9,25 +9,31 @@ const officers = [
     id: 2,
     name: "Koriel Lopez",
     position: "Vice President",
-    image: "missing.webp",
+    image: "KorielLopez.jpg",
   },
   {
     id: 3,
     name: "Joseph Trevino",
     position: "Secretary",
+    image: "JosephTrevino.jpg",
+  },
+  {
+    id: 8,
+    name: "Alexa Pera-Lara",
+    position: "Treasurer",
     image: "missing.webp",
   },
   {
     id: 4,
     name: "Jose Amaro",
     position: "Master at Arms",
-    image: "missing.webp",
+    image: "JoseAmaro.jpg",
   },
   {
     id: 5,
     name: "Daniel Drane",
     position: "Program Director",
-    image: "missing.webp",
+    image: "DanielDrane.jpg",
   },
   {
     id: 6,
@@ -46,9 +52,9 @@ const officers = [
 const faculty = [
   {
     id: 1,
-    name: "Carlos Rodriguez",
+    name: "Carlos Rodriguez Betancourth",
     position: "Advisor",
-    image: "missing.webp",
+    image: "CarlosRodriguezBetancourth.jpg",
   },
   {
     id: 2,
@@ -60,11 +66,12 @@ const faculty = [
     id: 3,
     name: "Dr. Nazmul Islam",
     position: "Advisor",
-    image: "missing.webp",
+    image: "NazmulIslam.jpg",
   },
 ];
 
 export default function Leadership() {
+  const size = 240;
   return (
     <div className="flex flex-col items-center gap-10">
       <div className="justify-items-center">
@@ -72,7 +79,12 @@ export default function Leadership() {
         <div className="grid grid-cols-3 gap-10">
           {officers.map((officer) => (
             <div key={officer.id}>
-              <img src={officer.image} width={300} height={300} />
+              <img
+                src={officer.image}
+                className="rounded object-fill"
+                width={size}
+                height={size}
+              />
               <p className="font-bold">{officer.position}</p>
               <p>{officer.name}</p>
             </div>
@@ -84,7 +96,12 @@ export default function Leadership() {
         <div className="grid grid-cols-3 gap-10">
           {faculty.map((fac) => (
             <div key={fac.id}>
-              <img src={fac.image} width={300} height={300} />
+              <img
+                src={fac.image}
+                className="rounded object-fill"
+                width={size}
+                height={size}
+              />
               <p className="font-bold">{fac.position}</p>
               <p>{fac.name}</p>
             </div>
