@@ -52,9 +52,9 @@ const officers = [
 const faculty = [
   {
     id: 1,
-    name: "Carlos Rodriguez",
+    name: "Carlos Rodriguez Betancourth",
     position: "Advisor",
-    image: "missing.webp",
+    image: "CarlosRodriguezBetancourth.jpg",
   },
   {
     id: 2,
@@ -66,7 +66,7 @@ const faculty = [
     id: 3,
     name: "Dr. Nazmul Islam",
     position: "Advisor",
-    image: "missing.webp",
+    image: "NazmulIslam.jpg",
   },
 ];
 
