@@ -10,12 +10,13 @@ export default function Home() {
       <p className="text-5xl font-bold text-primary_dark">About Us</p>
       <div className="flex flex-col gap-5 w-3/4 items-center">
         <p>
-          IEEE Edinburg Student Branch (IEEE ESB) is a dynamic, student-run
-          organization dedicated to fostering innovation, leadership, and
-          hands-on experience in engineering and technology. Based at UTRGV, our
-          branch operates under the global umbrella of the Institute of
-          Electrical and Electronics Engineers (IEEE), the world's largest
-          technical professional organization.
+          The Institute of Electrical and Electronics Engineers - Edinburg
+          Student Branch (IEEE ESB) is a dynamic, student-run organization
+          dedicated to fostering innovation, leadership, and hands-on experience
+          in engineering and technology. Based at UTRGV, our branch operates
+          under the global umbrella of the Institute of Electrical and
+          Electronics Engineers (IEEE), the world's largest technical
+          professional organization.
         </p>
         <h1 className="text-3xl font-bold">Who We Are</h1>
         <p>

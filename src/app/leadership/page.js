@@ -19,7 +19,7 @@ const officers = [
   },
   {
     id: 8,
-    name: "Alexa Pera-Lara",
+    name: "Alexa Perez-Lara",
     position: "Treasurer",
     image: "missing.webp",
   },
