@@ -13,17 +13,17 @@ export const NavBar = ({ navs }) => {
       </div>
       <div className="flex place-content-between px-2">
         <a href="https://www.facebook.com/ieeeedinburg" target="#">
-          <img src="facebook.png" width={28} height={28} />
+          <img src="/facebook.png" width={28} height={28} />
         </a>
         <a href="https://www.instagram.com/ieeeedinburg/" target="#">
-          <img src="instagram.png" width={28} height={28} />
+          <img src="/instagram.png" width={28} height={28} />
         </a>
         <a
           href="https://discord.gg/jMR3z42"
           target="#"
           className="bg-white p-px rounded"
         >
-          <img src="discord.png" width={25} height={25} />
+          <img src="/discord.png" width={25} height={25} />
         </a>
       </div>
     </div>

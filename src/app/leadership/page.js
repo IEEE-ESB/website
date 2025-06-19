@@ -3,7 +3,7 @@ const officers = [
     id: 1,
     name: "Diego Sauceda",
     position: "President",
-    image: "missing.webp",
+    image: "DiegoSauceda.jpg",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const officers = [
     id: 8,
     name: "Alexa Perez-Lara",
     position: "Treasurer",
-    image: "missing.webp",
+    image: "AlexaLara.jpg",
   },
   {
     id: 4,
@@ -39,13 +39,13 @@ const officers = [
     id: 6,
     name: "Sebastian Godinez",
     position: "Fundraising Director",
-    image: "missing.webp",
+    image: "SebastianGodinez.jpg",
   },
   {
     id: 7,
     name: "Joey Rodriguez",
     position: "Social Media Manager",
-    image: "missing.webp",
+    image: "JoeyRodriguez.jpg",
   },
 ];
 
