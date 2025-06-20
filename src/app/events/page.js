@@ -21,7 +21,18 @@ function EventList({ data }) {
               }
               className={`w-full h-48 mb-5 ${styles.event_image}`}
             />
-            <p className="text-xl font-bold text-primary_dark">{event.title}</p>
+            <a
+              href={
+                event.vlink
+                  ? event.vlink
+                  : "https://utrgv.campuslabs.com/engage/organization/ieee"
+              }
+              target="#"
+            >
+              <p className="text-xl font-bold text-primary_dark hover:text-primary">
+                {event.title}
+              </p>
+            </a>
             <p className="italic text-primary_dark">
               {date ? date.toDateString() : "Date TBD"} |{" "}
               {event.where ? event.where : "Location TBD"}
