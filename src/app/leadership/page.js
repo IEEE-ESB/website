@@ -60,7 +60,7 @@ const faculty = [
     id: 2,
     name: "Luis Castanuela",
     position: "Advisor",
-    image: "missing.webp",
+    image: "LuisCastanuela.jpg",
   },
   {
     id: 3,
