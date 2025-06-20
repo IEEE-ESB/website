@@ -7,7 +7,7 @@ export default function Home() {
         src="mountain.webp"
         className={`object-none object-center h-48 w-full ${styles.event_image}`}
       />
-      <p className="text-5xl font-bold text-primary_dark">About Us</p>
+      <p className="text-5xl font-bold text-black">About Us</p>
       <div className="flex flex-col gap-5 w-3/4 items-center">
         <p>
           The Institute of Electrical and Electronics Engineers - Edinburg

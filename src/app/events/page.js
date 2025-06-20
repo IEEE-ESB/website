@@ -95,7 +95,7 @@ export default async function Events() {
 
   return (
     <div className="text-center flex flex-col gap-10">
-      <p className="text-6xl font-bold text-primary_dark">Events</p>
+      <p className="text-5xl font-bold text-black">Events</p>
       <div>
         <p className="text-4xl text-black font-bold">Upcoming</p>
         <div className="border border-black border-2 mb-5" />
