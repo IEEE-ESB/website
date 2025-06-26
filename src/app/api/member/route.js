@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import PocketBase from "pocketbase";
 
-const pb = new PocketBase("https://dev.koriel.net");
+const pb = new PocketBase("https://db.ieee-esb.org");
 
 export async function POST(req) {
   try {

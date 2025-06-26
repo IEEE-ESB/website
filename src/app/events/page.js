@@ -16,7 +16,7 @@ function EventList({ data }) {
             <img
               src={
                 event.image
-                  ? `http://dev.koriel.net/api/files/events/${event.id}/${event.image}`
+                  ? `http://db.ieee-esb.org/api/files/events/${event.id}/${event.image}`
                   : "under_construction.png"
               }
               className={`w-full h-48 mb-5 ${styles.event_image}`}
@@ -57,7 +57,7 @@ export default async function Events() {
   let previous = [];
 
   try {
-    const pb = new PocketBase("https://dev.koriel.net");
+    const pb = new PocketBase("https://db.ieee-esb.org");
     // get all events
     let events = await pb.collection("events").getList();
     // get names from users table
