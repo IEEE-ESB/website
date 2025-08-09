@@ -36,11 +36,11 @@ export default function Membership() {
             <li>Fee: $5 / semester</li>
           </ul>
         </div>
-        <a href="membership/join">
+        {/* <a href="membership/join">
           <button className="text-3xl bg-primary hover:bg-primary_dark hover:text-white p-3 rounded">
             Join Us
           </button>
-        </a>
+        </a> */}
       </div>
       <div className="flex flex-col items-center gap-y-5">
         <p className="text-5xl font-bold">Alumni</p>
