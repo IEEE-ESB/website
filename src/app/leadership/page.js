@@ -19,9 +19,9 @@ const officers = [
   },
   {
     id: 8,
-    name: "Alexa Perez-Lara",
+    name: "Trinity Ramos",
     position: "Treasurer",
-    image: "AlexaLara.jpg",
+    image: "missing.webp",
   },
   {
     id: 4,
@@ -46,6 +46,24 @@ const officers = [
     name: "Joey Rodriguez",
     position: "Social Media Manager",
     image: "JoeyRodriguez.jpg",
+  },
+  {
+    id: 11,
+    name: "Project Director",
+    position: "Lauro Cantu",
+    image: "missing.webp",
+  },
+  {
+    id: 9,
+    name: "Creative Director",
+    position: "Itzel Aldaco",
+    image: "missing.webp",
+  },
+  {
+    id: 10,
+    name: "Webmaster",
+    position: "Bukola Awotoye",
+    image: "missing.webp",
   },
 ];
 
