@@ -8,7 +8,7 @@ export default function Home() {
         className={`object-none object-center h-48 w-full ${styles.event_image}`}
       />
       <p className="text-5xl font-bold text-black">About Us</p>
-      <div className="flex flex-col gap-5 w-3/4 items-center">
+      <div className="flex flex-col gap-5 w-1/2 items-center">
         <p>
           The Institute of Electrical and Electronics Engineers - Edinburg
           Student Branch (IEEE ESB) is a dynamic, student-run organization
@@ -23,8 +23,8 @@ export default function Home() {
           Open to students from all majors, IEEE ESB places a special emphasis
           on those pursuing electrical and computer engineering. We aim to build
           a collaborative environment where students can expand their technical
-          knowledge, grow their professional network, and make a real
-          impact—both on campus and in the wider community.
+          knowledge, grow their professional network, and make a real impact
+          both on campus and in the wider community.
         </p>
         <h1 className="text-3xl font-bold">What We Do</h1>
         <p>
@@ -55,7 +55,7 @@ export default function Home() {
         <p>
           Our mission is to empower students through hands-on learning,
           leadership opportunities, and community outreach in engineering and
-          technology—cultivating the next generation of innovators and
+          technology cultivating the next generation of innovators and
           changemakers.
         </p>
         <h1 className="text-3xl font-bold">Our Values</h1>
@@ -90,7 +90,7 @@ export default function Home() {
           Whether you're looking to enhance your technical skills, lead a team,
           give back to your community, or simply find a group of like-minded
           peers, IEEE ESB offers the tools and support to help you thrive. Join
-          us in shaping the future of engineering—starting today.
+          us in shaping the future of engineering starting today.
         </p>
       </div>
     </div>
