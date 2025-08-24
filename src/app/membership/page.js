@@ -1,9 +1,11 @@
+import styles from "@/app/styles.module.css";
+
 export default function Membership() {
   return (
     <div className="flex flex-col items-center justify-center gap-y-10">
       <img
         src="mountain.webp"
-        className="object-none object-center h-48 w-full"
+        className={`object-none object-center h-48 w-full ${styles.event_image}`}
       />
       <div className="flex flex-col items-center gap-y-5">
         <p className="text-5xl font-bold">Become a Member</p>
