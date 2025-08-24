@@ -1,64 +1,83 @@
+import styles from "@/app/styles.module.css";
+
 export default function Membership() {
   return (
     <div className="flex flex-col items-center justify-center gap-y-10">
       <img
         src="mountain.webp"
-        className="object-none object-center h-48 w-full"
+        className={`object-none object-center h-48 w-full ${styles.event_image}`}
       />
       <div className="flex flex-col items-center gap-y-5">
         <p className="text-5xl font-bold">Become a Member</p>
-        <div className="flex flex-col gap-3 w-3/4">
+        <div className="flex flex-col gap-3 w-1/2">
           <p>
-            Joining IEEE Edinburg Student Branch (IEEE ESB) means becoming part
-            of a vibrant, inclusive community of students passionate about
-            engineering, innovation, and impact. As a member, you’ll gain
-            hands-on experience through technical workshops, student-led
-            projects, and real-world problem-solving opportunities. Whether
-            you're building circuits, coding applications, or launching outreach
-            programs, you'll develop valuable skills that go beyond the
-            classroom.
+            At IEEE ESB, we're more than just a student organization we're a
+            launchpad for innovators, leaders, and lifelong learners. Whether
+            you're looking for a mentor or ready to take the lead yourself,
+            you'll find your place here.As a newly established non-profit, we
+            turn challenges into opportunities, learning and growing together
+            every step of the way. Our members thrive in competition, proudly
+            representing the Edinburg Student Branch (ESB) at the{" "}
+            <a
+              className="text-primary_dark hover:text-primary font-bold"
+              href="https://www.r5conferences.org"
+              target="#"
+            >
+              IEEE Region 5 Conference
+            </a>{" "}
+            ,{" "}
+            <a
+              className="text-primary_dark hover:text-primary font-bold"
+              href="https://ieeextreme.org"
+              target="#"
+            >
+              IEEE Xtreme Programming Competition
+            </a>
+            , and other local competitions we host or support.
           </p>
           <p>
-            IEEE ESB also offers access to mentorship, leadership roles, and
-            professional development opportunities to help you grow academically
-            and prepare for your future career. You'll connect with like-minded
-            peers, experienced mentors, and industry professionals through
-            networking events, sponsorships, and collaborations. Plus, with our
-            strong focus on community engagement, you'll have the chance to
-            inspire young minds by leading STEM activities in local schools. No
-            matter your major, if you're curious, driven, and ready to make a
-            difference, IEEE ESB is the place for you.
+            Need help with coursework or your senior design project? We've got
+            your back. And when it's your turn to give back, you can join us in
+            building partnerships and running fundraisers that make a difference
+            in our community. Try us for a semester you'll see why many stay for
+            life. From your first meeting to your alumni years, the skills,
+            connections, and experiences you gain here will follow you
+            throughout your career.
           </p>
-          <p className="font-bold">Requirements:</p>
-          <ul className="list list-disc">
-            <li>All Majors welcome</li>
-            <li>Actively participate</li>
-            <li>Fee: $5 / semester</li>
-          </ul>
+          <div className="flex flex-col items-center gap-3">
+            <p className="font-bold">Benefits</p>
+            <ul className="list list-disc">
+              <li>Workshops</li>
+              <li>Projects</li>
+              <li>Mentorship</li>
+              <li>Competitions</li>
+              <li>And more!</li>
+            </ul>
+            <p className="font-bold">Requirements</p>
+            <ul className="list list-disc">
+              <li>All Majors welcome</li>
+              <li>Fee: $5 / semester</li>
+            </ul>
+          </div>
         </div>
-        <a href="membership/join">
+        {/* <a href="membership/join">
           <button className="text-3xl bg-primary hover:bg-primary_dark hover:text-white p-3 rounded">
             Join Us
           </button>
-        </a>
+        </a> */}
       </div>
       <div className="flex flex-col items-center gap-y-5">
         <p className="text-5xl font-bold">Alumni</p>
-        <div className="flex flex-col gap-3 w-3/4">
+        <div className="flex flex-col gap-3 w-1/2">
           <p>
-            Even after graduation, your connection to IEEE Edinburg Student
-            Branch (IEEE ESB) continues to offer lasting value. As an alumnus,
-            you remain part of a growing network of engineers, innovators, and
-            leaders who share a passion for lifelong learning and community
-            impact.
-          </p>
-          <p>
-            Staying engaged with IEEE ESB gives you access to networking
-            opportunities with current members and fellow alumni, invitations to
-            special events, and chances to mentor or speak at workshops—allowing
-            you to give back and share your journey. You'll also stay connected
-            to developments in engineering education, student-led innovation,
-            and outreach initiatives that continue to shape the next generation.
+            Even after graduation, your connection to IEEE ESB continues to
+            offer lasting value. As alumni, you remain part of a growing network
+            of engineers, innovators, and leaders who share a passion for
+            lifelong learning and community impact. Staying engaged gives you
+            access to networking opportunities with current members and fellow
+            alumni, invitations to special events, and chances to mentor or
+            speak at workshops. This allows you to give back and share your
+            journey.
           </p>
           <p>
             Whether you're looking to mentor, recruit, collaborate on a project,

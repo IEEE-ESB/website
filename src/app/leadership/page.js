@@ -19,9 +19,9 @@ const officers = [
   },
   {
     id: 8,
-    name: "Alexa Perez-Lara",
+    name: "Trinity Ramos",
     position: "Treasurer",
-    image: "AlexaLara.jpg",
+    image: "missing.webp",
   },
   {
     id: 4,
@@ -47,6 +47,24 @@ const officers = [
     position: "Social Media Manager",
     image: "JoeyRodriguez.jpg",
   },
+  {
+    id: 11,
+    name: "Lauro Cantu",
+    position: "Project Director",
+    image: "missing.webp",
+  },
+  {
+    id: 9,
+    name: "Itzel Aldaco",
+    position: "Creative Director",
+    image: "missing.webp",
+  },
+  {
+    id: 10,
+    name: "Bukola Awotoye",
+    position: "Webmaster",
+    image: "missing.webp",
+  },
 ];
 
 const faculty = [
@@ -60,7 +78,7 @@ const faculty = [
     id: 2,
     name: "Luis Castanuela",
     position: "Advisor",
-    image: "missing.webp",
+    image: "LuisCastanuela.jpg",
   },
   {
     id: 3,
@@ -108,14 +126,14 @@ export default function Leadership() {
           ))}
         </div>
       </div>
-      <div className="justify-items-center">
+      {/* <div className="justify-items-center">
         <p className="text-2xl font-bold">Want to be an officer?</p>
         <a href="/leadership/join">
           <button className="bg-primary hover:bg-primary_dark hover:text-white border rounded p-2 font-bold">
             Apply Now
           </button>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }

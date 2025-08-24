@@ -16,12 +16,23 @@ function EventList({ data }) {
             <img
               src={
                 event.image
-                  ? `http://dev.koriel.net/api/files/events/${event.id}/${event.image}`
+                  ? `http://db.ieee-esb.org/api/files/events/${event.id}/${event.image}`
                   : "under_construction.png"
               }
               className={`w-full h-48 mb-5 ${styles.event_image}`}
             />
-            <p className="text-xl font-bold text-primary_dark">{event.title}</p>
+            <a
+              href={
+                event.vlink
+                  ? event.vlink
+                  : "https://utrgv.campuslabs.com/engage/organization/ieee"
+              }
+              target="#"
+            >
+              <p className="text-xl font-bold text-primary_dark hover:text-primary">
+                {event.title}
+              </p>
+            </a>
             <p className="italic text-primary_dark">
               {date ? date.toDateString() : "Date TBD"} |{" "}
               {event.where ? event.where : "Location TBD"}
@@ -46,7 +57,7 @@ export default async function Events() {
   let previous = [];
 
   try {
-    const pb = new PocketBase("https://dev.koriel.net");
+    const pb = new PocketBase("https://db.ieee-esb.org");
     // get all events
     let events = await pb.collection("events").getList();
     // get names from users table
@@ -84,7 +95,7 @@ export default async function Events() {
 
   return (
     <div className="text-center flex flex-col gap-10">
-      <p className="text-6xl font-bold text-primary_dark">Events</p>
+      <p className="text-5xl font-bold text-black">Events</p>
       <div>
         <p className="text-4xl text-black font-bold">Upcoming</p>
         <div className="border border-black border-2 mb-5" />
