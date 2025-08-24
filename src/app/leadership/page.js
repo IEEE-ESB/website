@@ -49,20 +49,20 @@ const officers = [
   },
   {
     id: 11,
-    name: "Project Director",
-    position: "Lauro Cantu",
+    name: "Lauro Cantu",
+    position: "Project Director",
     image: "missing.webp",
   },
   {
     id: 9,
-    name: "Creative Director",
-    position: "Itzel Aldaco",
+    name: "Itzel Aldaco",
+    position: "Creative Director",
     image: "missing.webp",
   },
   {
     id: 10,
-    name: "Webmaster",
-    position: "Bukola Awotoye",
+    name: "Bukola Awotoye",
+    position: "Webmaster",
     image: "missing.webp",
   },
 ];
