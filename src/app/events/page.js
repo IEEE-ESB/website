@@ -85,7 +85,7 @@ export default async function Events() {
       item.when ? new Date(item.when) >= Date.now() : true
     );
     future.sort((a, b) =>
-      a.when && b.when ? new Date(b.when) - new Date(a.when) : 1
+      a.when && b.when ? new Date(b.when) - new Date(a.when) : -Infinity
     );
     previous = past;
     upcoming = future;
