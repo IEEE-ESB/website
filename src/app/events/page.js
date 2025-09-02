@@ -7,7 +7,6 @@ function EventList({ data }) {
   return (
     <div className="grid grid-flow-rows grid-cols-3 gap-5">
       {data.map((event) => {
-        const date = event.when ? new Date(event.when) : undefined;
         return (
           <div
             key={event.title}
@@ -34,8 +33,17 @@ function EventList({ data }) {
               </p>
             </a>
             <p className="italic text-primary_dark">
-              {date ? date.toDateString() : "Date TBD"} |{" "}
-              {event.where ? event.where : "Location TBD"}
+              {event.when instanceof Date
+                ? `${event.when.toDateString()} ${event.when.toLocaleTimeString(
+                    [],
+                    {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      hour12: true,
+                    }
+                  )}`
+                : "Date TBD"}{" "}
+              | {event.where ? event.where : "Location TBD"}
             </p>
             <p className="text-primary">
               Mentors: {event.who.length > 0 ? event.who.join(", ") : "TBD"}
@@ -53,8 +61,8 @@ function EventList({ data }) {
 }
 
 export default async function Events() {
-  let upcoming = [];
-  let previous = [];
+  let future = [];
+  let past = [];
 
   try {
     const pb = new PocketBase("https://db.ieee-esb.org");
@@ -72,23 +80,21 @@ export default async function Events() {
     // map events to correct users
     const names = new Map(users.map((person) => [person.id, person.name]));
     events = events.items.map((event) => {
-      return { ...event, who: event.who.map((name) => names.get(name)) };
+      return {
+        ...event,
+        who: event.who.map((name) => names.get(name)),
+        when: event.when ? new Date(event.when) : Infinity,
+      };
     });
     // separate events and sort them
-    const past = events.filter((item) =>
-      item.when ? new Date(item.when) < Date.now() : false
+    past = events.filter((item) =>
+      item.when ? item.when < Date.now() : false
     );
-    past.sort((a, b) =>
-      a.when && b.when ? new Date(b.when) - new Date(a.when) : 1
+    future = events.filter((item) =>
+      item.when ? item.when >= Date.now() : true
     );
-    const future = events.filter((item) =>
-      item.when ? new Date(item.when) >= Date.now() : true
-    );
-    future.sort((a, b) =>
-      a.when && b.when ? new Date(b.when) - new Date(a.when) : -Infinity
-    );
-    previous = past;
-    upcoming = future;
+    past.sort((a, b) => a.when - b.when);
+    future.sort((a, b) => a.when - b.when);
   } catch {
     return <div>Please try again later</div>;
   }
@@ -99,8 +105,8 @@ export default async function Events() {
       <div>
         <p className="text-4xl text-black font-bold">Upcoming</p>
         <div className="border border-black border-2 mb-5" />
-        {upcoming.length > 0 ? (
-          <EventList data={upcoming} />
+        {future.length > 0 ? (
+          <EventList data={future} />
         ) : (
           <p>No upcoming events, check again soon!</p>
         )}
@@ -108,8 +114,8 @@ export default async function Events() {
       <div>
         <p className="text-4xl text-black font-bold">Previous</p>
         <div className="border border-black border-2 mb-5" />
-        {previous.length > 0 ? (
-          <EventList data={previous} />
+        {past.length > 0 ? (
+          <EventList data={past} />
         ) : (
           <p>Start of a new beginning</p>
         )}
