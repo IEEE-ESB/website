@@ -3,6 +3,13 @@ export default function ContactUs() {
     <div className="flex flex-col items-center gap-10 text-xl">
       <p className="text-5xl font-bold">Contact Us</p>
       <div className="flex gap-5">
+          <img src="location.jpg" width={25} height={25} />
+        <p>
+          UTRGV Edinburg Campus – Engineering Building (EENGR), Room [2.296]
+
+        </p>
+      </div>
+      <div className="flex gap-5">
         <a href="https://www.facebook.com/ieeeedinburg" target="#">
           <img src="facebook.png" width={25} height={25} />
         </a>

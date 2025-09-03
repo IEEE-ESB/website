@@ -15,7 +15,7 @@ export const NavBar = ({ navs }) => {
         <a href="https://www.facebook.com/ieeeedinburg" target="#">
           <img src="/facebook.png" width={28} height={28} />
         </a>
-        <a href="https://www.instagram.com/ieeeedinburg/" target="#">
+        <a href="https://www.instagram.com/ieee.edinburg?igsh=MXUydWdiNnVhNnQ0MQ==" target="#">
           <img src="/instagram.png" width={28} height={28} />
         </a>
         <a
